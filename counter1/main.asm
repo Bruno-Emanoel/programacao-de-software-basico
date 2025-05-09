@@ -1,5 +1,5 @@
 .nolist
-.include "m328Pdef.inc"
+.include "../m328Pdef.inc"
 .list
 
 .def count = r24
