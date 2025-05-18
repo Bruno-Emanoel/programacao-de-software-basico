@@ -45,7 +45,6 @@ end_div_aux:
   com   aux
   out   PORTB, aux
   rcall delay_low
-  ;limpa
   
   ret
 
@@ -67,7 +66,6 @@ loop_inc:
 	cpse	count, aux;
 	rjmp	end
 	ldi 	count, 0;
-
 end:
 	rcall delay_and_write
 	rjmp 	loop
