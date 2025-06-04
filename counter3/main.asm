@@ -2,9 +2,9 @@
 .include "../m328Pdef.inc"
 .list
 
-.def count1 = r16
-.def count2 = r17
-.def count3 = r18
+.def count1 = r16 ; unidedade
+.def count2 = r17 ; dezena
+.def count3 = r18 ; centena
 .def aux = r19
 .def param = r20
 
@@ -43,12 +43,14 @@ delay__2:
   brne  delay__0
   ret
 
+
 delay_low:
   ldi   r24, 0x10
 delay_low__0:
   dec   r24
   brne  delay_low__0
   ret
+
 
 write:
   ; essa função usa o endereço da tabela de mapeamento para número em 7 segmentos
@@ -66,6 +68,7 @@ write__not_carry:
   ldi   aux, 0              ; colocar 0 em aux
   out   PORTC, aux          ; zera o que está em portc para não acontecerem interferências
   ret
+
 
 main:
   clr   count2       ; count 2 é zerado
